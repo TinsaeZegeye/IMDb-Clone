@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
+import Providers from "./Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,15 +20,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
-        {children}
-        {/* Header */}
-        <Header/> 
+    <html lang="en" suppressHydrationWarning>
+      <body className="dark:bg-gray-700 dark:text-gray-200 bg-white text-gray-700 min-h-screen transition-colors duration-300 select-none">
+        <Providers>
+            {children}
+            {/* Header */}
+            <Header/> 
 
-        {/* Navbar */}
+            {/* Navbar */}
 
-        {/* Searchbox */}
+            {/* Searchbox */}
+        </Providers>
       </body>
     </html>
   );
