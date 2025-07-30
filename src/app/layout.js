@@ -23,9 +23,9 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressHydrationWarning>
       <body className="dark:bg-gray-700 dark:text-gray-200 bg-white text-gray-700 min-h-screen transition-colors duration-300 select-none">
         <Providers>
-            {children}
             {/* Header */}
             <Header/> 
+            {children}
 
             {/* Navbar */}
 
