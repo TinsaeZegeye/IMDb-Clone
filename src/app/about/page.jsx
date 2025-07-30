@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function page() {
   return (
-    <div className='max-w-6xl mx-auto space-y-4'>
+    <div className='max-w-6xl mx-auto space-y-4 p-4'>
           <h1 className='text-2xl text-amber-600 font-medium'>About</h1>
           <p>
               Welcome to our IMDb Clone Movie Store — a modern platform where movie lovers can discover, explore, and learn more about their favorite films. Whether you're into action, drama, comedy, or documentaries, this site offers a wide range of movie listings, including trending titles, top-rated films, and the latest releases. Each movie card includes key details like ratings, descriptions, and release dates to help you stay informed.
