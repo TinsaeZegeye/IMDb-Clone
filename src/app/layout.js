@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Providers from "./Providers";
 import Navbar from "./components/Navbar";
 import SearchBox from "./components/SearchBox";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
