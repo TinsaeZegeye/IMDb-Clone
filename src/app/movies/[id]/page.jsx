@@ -6,7 +6,7 @@ async function getMovie(movieId) {
 }
 
 export default async function MoviePage({ params }) {
-    const movieId = params.id;
+    const movieId = (await params).id;
     const movie = await getMovie(movieId);
     const imagePath = movie.backdrop_path || movie.poster_path;
     
@@ -18,6 +18,7 @@ export default async function MoviePage({ params }) {
                         src={imagePath ? `https://image.tmdb.org/t/p/original/${imagePath}` : '/fallbackimage.svg'}
                         className='rounded-lg object-cover'
                         fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         placeholder='blur'
                         blurDataURL='/spinner.svg'
                         alt={movie.title || 'Movie image'}
