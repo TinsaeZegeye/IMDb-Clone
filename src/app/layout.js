@@ -29,7 +29,9 @@ export default function RootLayout({ children }) {
           <Header/> 
 
           {/* Navbar */}
-          <Navbar/>
+          <Suspense fallback={<div>Loading Navbar...</div>}>
+            <Navbar/>
+          </Suspense>
 
           {/* Searchbox */}
           <SearchBox/>
