@@ -4,11 +4,12 @@ import React from 'react'
 import { GoThumbsup } from "react-icons/go";
 
 export default function Card({result}) {
-  return (
-      <div className='cursor-pointer sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sma:m-2 transition-shadow duration-200 group'>
+    const imagePath = result.backdrop_path || result.poster_path;
+    return (
+        <div className='cursor-pointer sm:p-3 sm:hover:shadow-slate-400 sm:shadow-md rounded-lg sm:border sm:border-slate-400 sma:m-2 transition-shadow duration-200 group'>
           <Link href={`/movies/${result.id}`}>
               <Image
-                src={`https://image.tmdb.org/t/p/original/${result.backdrop_path || result.poster_path}`}
+                src={imagePath? `https://image.tmdb.org/t/p/original/${imagePath}`: 'fallbackimage.svg'}
                   className='sm:rounded-t-lg group-hover:opacity-80 transition-opacity duration-200'
                   
                   style={
@@ -21,7 +22,7 @@ export default function Card({result}) {
                 blurDataURL='/spinner.svg'
                 width={500}
                 height={300}
-                alt={result.title || 'Movie image'}
+                alt={result.title || result.name || 'Movie image'}
               />
               <div className='p-2'>
                   <p className='line-clamp-2 text-md'>
